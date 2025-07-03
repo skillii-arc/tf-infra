@@ -2,6 +2,12 @@ include "root" {
   path = find_in_parent_folders("root.hcl")
 }
 
+locals {
+  project_vars = read_terragrunt_config(find_in_parent_folders("projects-vars.hcl")).locals
+  global_vars  = read_terragrunt_config(find_in_parent_folders("global-vars.hcl")).locals
+  merged_tags = merge(local.project_vars.common_tags, local.global_vars.common_tags)
+}
+
 terraform {
   source = "../../../../../tf-modules/aws/EC2/"
 }
@@ -33,5 +39,5 @@ inputs = {
   }
   security_group_name = "Backend Host SG"
   security_group_vpc_id = dependency.VPC.outputs.vpc_id
-#   tags = local.common_tags
+  tags = local.merged_tags
 }
