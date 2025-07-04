@@ -25,6 +25,7 @@ dependency "VPC" {
 inputs = {
   instance_ami = "ami-0f918f7e67a3323f0"
   instance_type  = "t2.micro"
+  associate_public_ip_address = true
   # key_name = "firstVM"
   # vpc_security_group_ids = [""]
   subnet_id = dependency.VPC.outputs.public_subnets[0]

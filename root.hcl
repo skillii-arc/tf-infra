@@ -1,15 +1,3 @@
-# generate "locals" {
-#     path = "locals.tf"
-#     if_exists = "overwrite_terragrunt"
-#     contents = <<EOF
-# locals {
-#   project_vars = (read_terragrunt_config(find_in_parent_folders("projects-vars.hcl"))).locals
-#   global_vars = (read_terragrunt_config(find_in_parent_folders("global-vars.hcl"))).locals
-#   merged_tags = merge(local.project_vars.common_tags, local.global_vars.common_tags)
-# }
-# EOF
-# }
-
 generate "provider" {
     path      = "provider.tf"
     if_exists = "overwrite_terragrunt"
