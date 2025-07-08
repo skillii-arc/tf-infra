@@ -1,8 +1,13 @@
 name: Starter Workflow Demo
 
 on:
-  push
-  
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+
 jobs:
   build:
     runs-on: tf-runner
