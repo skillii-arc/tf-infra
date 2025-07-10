@@ -9,7 +9,7 @@ locals {
 }
 
 terraform {
-  source = "git::git@github.com:skillii-arc/tf-modules.git//aws/EC2?ref=aws-EC2-v1.0"
+  source = "git::git@github.com-tf-modules:skillii-arc/tf-modules.git//aws/EC2?ref=aws-EC2-v1.0"
 }
 
 dependency "VPC" {
