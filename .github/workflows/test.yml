@@ -20,7 +20,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Set Directory Path
+      - name: get PWD
         run: pwd
 
       # Generates an execution plan for Terraform
