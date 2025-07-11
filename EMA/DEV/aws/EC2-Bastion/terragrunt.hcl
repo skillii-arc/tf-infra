@@ -9,14 +9,14 @@ locals {
 }
 
 terraform {
-  source = "../../../../../tf-modules/aws/EC2/"
+  source = "git::git@github.com-tf-modules:skillii-arc/tf-modules.git//aws/EC2?ref=aws-EC2-v1.0"
 }
 
 dependency "VPC" {
   config_path = "../VPC"
   mock_outputs = {
-          private_subnets = ["subnet-xyz"]
-          public_subnets = ["subnet-xyz"]
+          private_subnets = ["subnet-0b74cf2dbe7666432"]
+          public_subnets = ["subnet-0b74cf2dbe7666432"]
           vpc_cidr_block = "10.0.0.0/16"
           vpc_id = "vpc-xyz"
       }
