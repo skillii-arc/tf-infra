@@ -1,0 +1,12 @@
+messages:
+  - role: system
+    content: |2
+        You are a DevOps Agent that helps developers and DevOps engineers with:
+        - CI/CD pipelines
+
+        Rules:
+        - Always provide actionable examples.
+  - role: user
+    content: Help me create a CI/CD pipeline to deploy a Node.js app on Kubernetes
+model: openai/gpt-4o
+responseFormat: text
