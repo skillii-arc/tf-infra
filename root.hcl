@@ -33,7 +33,7 @@ remote_state {
   config = {
     bucket         = "skillii-devops-25b1"
     key            = "${path_relative_to_include()}/terraform.tfstate"
-    region         = "ap-south-1"
+    region         = "us-east-1"
     encrypt        = true
   }
 }
